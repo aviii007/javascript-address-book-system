@@ -140,6 +140,10 @@ let contactArray = new Array();
 function addContact(){
     let firstName = prompt("Enter Firstname: ");
     let lastName = prompt("Enter Lastname: ");
+    if(contactArray.find((contact)=>(contact.firstName+" "+contact.lastName)==(firstName+" "+lastName))){   
+        console.log("Given contact already present in addressbook.");
+        return;
+    }
     let address = prompt("Enter Address: ");
     let city = prompt("Enter City name: ");
     let state = prompt("Enter State name: ");
@@ -202,6 +206,7 @@ function editContact(firstName){
     }
 }
 
+
 let deletContact=()=>{
     if(contactArray.length==0){
         console.log("No contacts in the list");
@@ -215,6 +220,7 @@ let deletContact=()=>{
         console.log("Contact is deleted from Addressbook.")
     }
 }
+
 
 let choice = 0;
 do{
